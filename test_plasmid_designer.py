@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """
 Test Suite for Plasmid Designer Tool
-====================================
-Tests various aspects of the plasmid designer
+
 """
 
 import os
@@ -11,7 +10,6 @@ import subprocess
 
 
 class TestPlasmidDesigner:
-    """Test class for plasmid designer"""
     
     def __init__(self):
         self.test_results = []
@@ -19,7 +17,6 @@ class TestPlasmidDesigner:
         self.failed = 0
         
     def run_test(self, test_name: str, test_function):
-        """Run a single test"""
         print(f"\n{'='*60}")
         print(f"TEST: {test_name}")
         print('='*60)
@@ -39,7 +36,7 @@ class TestPlasmidDesigner:
             print(f"✗ {test_name} ERROR: {e}")
     
     def test_basic_plasmid_design(self):
-        """Test basic plasmid design with pUC19"""
+        
         print("Running basic plasmid design test...")
         
         # Run the plasmid designer
@@ -65,7 +62,7 @@ class TestPlasmidDesigner:
         print("Basic plasmid design successful")
     
     def test_ecori_removal(self):
-        """Test that EcoRI site is removed from output"""
+        
         print("Checking if EcoRI site was removed...")
         
         # Read the output file
@@ -112,7 +109,7 @@ class TestPlasmidDesigner:
         print(f"Found {len(found_sites)} restriction sites")
     
     def test_output_file_format(self):
-        """Test that output file is properly formatted"""
+       
         print("Checking output file format...")
         
         with open('test_output.fa', 'r') as f:
@@ -193,7 +190,7 @@ class TestPlasmidDesigner:
             print("✓ EcoRI successfully removed from output")
     
     def print_summary(self):
-        """Print test summary"""
+        
         print("\n" + "="*60)
         print("TEST SUMMARY")
         print("="*60)
@@ -211,7 +208,7 @@ class TestPlasmidDesigner:
 
 
 def main():
-    """Main test function"""
+   
     print("="*60)
     print("Plasmid Designer - Test Suite")
     print("="*60)

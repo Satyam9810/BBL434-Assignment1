@@ -12,10 +12,8 @@ from collections import Counter
 
 
 class PlasmidAnalyzer:
-    """Analyze plasmid sequences"""
     
     def __init__(self):
-        """Initialize analyzer with restriction enzymes"""
         self.restriction_enzymes = {
             'EcoRI': 'GAATTC',
             'BamHI': 'GGATCC',
@@ -38,7 +36,6 @@ class PlasmidAnalyzer:
         }
     
     def read_fasta(self, filename):
-        """Read FASTA file"""
         header = ""
         sequence = ""
         
@@ -53,7 +50,6 @@ class PlasmidAnalyzer:
         return header, sequence
     
     def analyze_composition(self, sequence):
-        """Analyze nucleotide composition"""
         counts = Counter(sequence)
         total = len(sequence)
         
@@ -78,7 +74,6 @@ class PlasmidAnalyzer:
         return composition, percentages, gc_content, at_content
     
     def find_restriction_sites(self, sequence):
-        """Find all restriction enzyme sites"""
         sites = {}
         
         for enzyme, site_seq in self.restriction_enzymes.items():
@@ -103,7 +98,6 @@ class PlasmidAnalyzer:
         return sites
     
     def analyze_orfs(self, sequence):
-        """Find potential open reading frames"""
         # Start codons
         start_codons = ['ATG']
         stop_codons = ['TAA', 'TAG', 'TGA']
@@ -221,7 +215,6 @@ class PlasmidAnalyzer:
 
 
 def main():
-    """Main function"""
     if len(sys.argv) < 2:
         print("Usage: python3 plasmid_analyzer.py <plasmid.fa>")
         print("\nExample:")

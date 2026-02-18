@@ -14,14 +14,14 @@ import os
 
 
 def print_section(title):
-    """Print a section header"""
+   
     print("\n" + "="*70)
     print(title)
     print("="*70 + "\n")
 
 
 def run_command(cmd, description):
-    """Run a command and show output"""
+   
     print(f"→ {description}")
     print(f"  Command: {' '.join(cmd)}\n")
     
@@ -43,7 +43,7 @@ def run_command(cmd, description):
 
 
 def main():
-    """Main workflow"""
+    
     print("="*70)
     print("COMPLETE PLASMID DESIGN WORKFLOW")
     print("="*70)

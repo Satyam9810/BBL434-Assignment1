@@ -73,7 +73,6 @@ class PlasmidDesigner:
         return markers
     
     def _load_default_markers(self):
-        """Load default markers if file not found"""
         # Basic restriction sites
         default_re = {
             'EcoRI': 'GAATTC',
